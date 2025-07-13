@@ -1,0 +1,35 @@
+<div class="flex flex-col max-w-2xl mx-auto">
+  <div class="flex justify-between">
+    <%= link_to "< Back to listing", listings_path, class:"bg-gray-100 rounded-lg border-1 border-gray-900 p-2 hover:bg-gray-300" %>
+    <%= link_to "Edit", edit_listing_path(@listing), class:"bg-blue-400 rounded-lg border-1 border-gray-900 p-2 hover:bg-blue-500 text-white" %>
+  </div>
+  <br/>
+  <% if @listing.images.any? %>
+    <div class="flex flex-col md:flex-row gap-8 rounded-lg overflow-hidden relative">
+      <%= image_tag @listing.images.first, class:"md:w-80 h-80" %>
+      <div class="grid grid-cols-4 md:grid-cols-2 md:gap-8 flex-wrap">
+        <% @listing.images[1..4].each do |image| %>
+          <%= image_tag image, class: "h-25 w-25 md:w-36 md:h-36 object-cover" %>
+        <% end %>
+      </div>
+      <%= link_to "Show all photos", photos_listing_path(@listing), class:"absolute bottom-1 right-1 bg-gray-100 rounded-lg p-2 outliner text-sm"%>
+    </div>
+  <% end  %>
+  <br/>
+  <h1 class="text-2xl font-semibold"> <%= @listing.title %> </h1>
+  <%= @listing.description %>
+  <div class="grid grid-cols-3 gap-8 my-5">
+    <div class="shadow-lg h-40 flex flex-col items-center justify-center rounded-lg">
+      <i class="fa-solid fa-bed fa-xl text-gray-800"></i>
+      <span><%= @listing.bedrooms %></span>
+    </div>
+    <div class="shadow-lg h-40 flex flex-col items-center justify-center rounded-lg">
+      <i class="fa-solid fa-toilet fa-xl text-gray-800"></i>
+      <span><%= @listing.bathrooms %></span>
+    </div>
+    <div class="shadow-lg h-40 flex flex-col items-center justify-center rounded-lg">
+      <i class="fa-solid fa-users"></i>
+      <span><%= @listing.people_limit %></span>
+    </div>
+  </div>
+</div>
