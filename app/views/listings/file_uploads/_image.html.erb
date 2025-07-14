@@ -1,7 +1,7 @@
-<div class="relative bg-white p-1 rounded shadow">
+<div class="relative bg-white p-1 rounded shadow" data-controller="utils">
   <%= image_tag image, class: "w-20 h-20 object-cover rounded" %>
   <%= hidden_field_tag "listing[images][]", image.signed_id %>
-  <%= link_to "#", class: "absolute top-1 right-1 bg-white rounded-full p-1 shadow" do %>
+  <%= link_to "#", class: "absolute top-1 right-1 bg-white rounded-full p-1 shadow", data: {action: "utils#remove"} do %>
     <i class="fa-solid fa-x text-red-500"></i>
   <% end %>
 </div>
