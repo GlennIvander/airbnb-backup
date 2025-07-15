@@ -9,11 +9,11 @@
         <%= link_to "Sign in", new_user_session_path, class:"font-semibold" %>
         <%= link_to "Create account", new_user_registration_path, class:"font-semibold" %>
       <% else %>
-        <div class="relative">
-          <div class="border-2 border-gray-100 rounded-full h-10 w-10 flex items-center justify-center">
+        <div class="relative" data-controller="dropdown">
+          <a href="#" class="border-2 border-gray-100 rounded-full h-10 w-10 flex items-center justify-center" data-action="click->dropdown#toggle">
             <i class="fa-solid fa-user"></i>
-          </div>
-          <div class="absolute top-16 -left-24 w-40 h-64 bg-gray-100">
+          </a>
+          <div class="absolute top-12 -left-30 w-40 h-64 bg-white border-2 border-gray-200 rounded-lg hidden" data-dropdown-target="menu">
 
           </div>
         </div>
