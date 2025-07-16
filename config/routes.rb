@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     get "photos", to: "listings#photos", on: :member
   end
 
+  resource :settings, only: [ :show, :create ]
+
   namespace :listings do
     resource :file_uploads, only: [ :create ]
   end
