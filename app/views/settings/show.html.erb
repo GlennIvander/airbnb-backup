@@ -1,1 +1,56 @@
-sdadas
+<div class="max-w-3xl w-full mx-auto">
+  <%= form_with model: current_user, url: settings_path, method: :post do |f| %>
+    <div class="max-w-3xl flex flex-col gap-4 border-black">
+      <div class="grid grid-cols-2 gap-4">
+        <div class="flex flex-col">
+          <%= f.label :first_name %>
+          <%= f.text_field :first_name, class:"block shadow-sm rounded-md border px-3 py-2 mt-2 w-full" %>
+        </div>
+        <div class="flex flex-col">
+          <%= f.label :last_name %>
+          <%= f.text_field :last_name, class:"block shadow-sm rounded-md border px-3 py-2 mt-2 w-full" %>
+        </div>
+      </div>
+      <div class="grid grid-cols-3 gap-4">
+        <div class="flex flex-col col-span-2">
+          <%= f.label :address_1 %>
+          <%= f.text_field :address_1, class:"block shadow-sm rounded-md border px-3 py-2 mt-2 w-full" %>
+        </div>
+        <div class="flex flex-col">
+          <%= f.label :address_2 %>
+          <%= f.text_field :address_2, class:"block shadow-sm rounded-md border px-3 py-2 mt-2 w-full" %>
+        </div>
+      </div>
+      <div class="grid grid-cols-3 gap-4">
+        <div class="flex flex-col">
+          <%= f.label :city %>
+          <%= f.text_field :city, class:"block shadow-sm rounded-md border px-3 py-2 mt-2 w-full" %>
+        </div>
+        <div class="flex flex-col">
+          <%= f.label :region %>
+          <%= f.text_field :region, class:"block shadow-sm rounded-md border px-3 py-2 mt-2 w-full" %>
+        </div>
+        <div class="flex flex-col">
+          <%= f.label :zipcode %>
+          <%= f.text_field :zipcode, class:"block shadow-sm rounded-md border px-3 py-2 mt-2 w-full" %>
+        </div>
+        <div class="flex flex-col">
+          <%= f.label :country %>
+          <%= f.text_field :country, class:"block shadow-sm rounded-md border px-3 py-2 mt-2 w-full" %>
+        </div>
+      </div>
+    </div>
+    <br/>
+    <div class="inline">
+    <%= f.submit "Update", class: "w-full sm:w-auto rounded-md px-3.5 py-2.5 bg-gradient-to-r from-blue-500 to-violet-500 text-violet-100 hover:from-blue-600 hover:to-violet-600 inline-block font-medium cursor-pointer" %>
+    </div>
+  <% end %>
+
+  <div class="mt-20 border-t-5 border-gray-100 pt-5 mb-10">
+    <h3 class="text-2xl">Additional Settings</h3>
+    <br/>
+    <%= link_to "Change Email/Password", edit_user_registration_path, class:"rounded-lg p-2 border-2 border-gray-100" %>
+  </div>
+  <br/>
+  <%= link_to "< Back", :back, class: "text-lg" %>
+</div>

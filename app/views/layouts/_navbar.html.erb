@@ -9,7 +9,7 @@
         <%= link_to "Sign in", new_user_session_path, class:"font-semibold" %>
         <%= link_to "Create account", new_user_registration_path, class:"font-semibold" %>
       <% else %>
-        <%= link_to new_listing_path, class: "inline-flex items-center gap-2 rounded-lg border-2 border-red-500 font-semibold p-2 bg-gradient-to-r from-red-500 to-pink-500 text-pink-100" do %>
+        <%= link_to new_listing_path, class: "inline-flex items-center gap-2 rounded-lg border-2 border-red-500 font-semibold p-2 bg-gradient-to-r from-red-500 to-pink-500 text-pink-100 hover:from-red-600 hover:to-pink-600" do %>
           <i class="fa-solid fa-plus"></i>
           New Listing
         <% end %>
