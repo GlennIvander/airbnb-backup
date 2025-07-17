@@ -1,7 +1,7 @@
 <div class="flex flex-col max-w-2xl mx-auto">
   <div class="flex justify-between">
     <%= link_to "< Back to listing", listings_path, class:"bg-gray-100 rounded-lg border-1 border-gray-900 p-2 hover:bg-gray-300" %>
-    <%= link_to "Edit", edit_listing_path(@listing), class:"bg-blue-400 rounded-lg border-1 border-gray-900 p-2 hover:bg-blue-500 text-white" %>
+    <%= link_to "Edit", edit_listing_path(@listing), class:"rounded-lg border-2 p-2 bg-gradient-to-r from-blue-500 to-violet-500 text-violet-100 hover:from-blue-600 hover:to-violet-600 inline-block font-medium cursor-pointer" %>
   </div>
   <br/>
   <% if @listing.images.any? %>
@@ -12,7 +12,7 @@
           <%= image_tag image, class: "h-25 w-25 md:w-36 md:h-36 object-cover" %>
         <% end %>
       </div>
-      <%= link_to "Show all photos", photos_listing_path(@listing), class:"absolute bottom-1 right-1 bg-gray-100 rounded-lg p-2 outliner text-sm"%>
+      <%= link_to "...all photos", photos_listing_path(@listing), class:"absolute bottom-1 right-1 bg-gray-100 rounded-lg p-2 outliner text-sm hover:bg-gray-300"%>
     </div>
   <% end  %>
   <br/>
@@ -32,4 +32,6 @@
       <span><%= @listing.people_limit %></span>
     </div>
   </div>
+  <br/>
+  <%= link_to "< Back", :back, class: "text-lg" %>
 </div>
