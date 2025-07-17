@@ -39,6 +39,17 @@
           <%= f.text_field :country, class:"block shadow-sm rounded-md border px-3 py-2 mt-2 w-full" %>
         </div>
       </div>
+      <div class="flex flex-col">
+        <%= f.label :about_me %>
+        <%= f.rich_text_area :about_me, class:"block shadow-sm rounded-md border px-3 py-2 mt-2 w-full" %>
+      </div>
+      <div class="flex gap-4">
+        <%= image_tag(current_user.profile_picture, class: "w-16 h-16 object-cover rounded-full") if current_user.profile_picture.attached? %>
+        <div class="flex flex-col">
+          <%= f.label :profile_picture %>
+          <%= f.file_field :profile_picture, class:"block shadow-sm rounded-md border px-2 py-2 w-50 bg-gray-100 text-sm hover:bg-gray-200" %>
+        </div>
+      </div>
     </div>
     <br/>
     <div class="inline">
