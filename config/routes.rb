@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   end
 
   resource :settings, only: [ :show, :create ]
-
+  resource :owner_signup, only: [ :show, :create ], controller: :owner_signup
+ 
   namespace :listings do
     resource :file_uploads, only: [ :create ]
   end

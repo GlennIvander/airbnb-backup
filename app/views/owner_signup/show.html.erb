@@ -1,0 +1,8 @@
+<div class="flex flex-col items-center w-full">
+  <h1 class="text-2xl text-center">Sign up</h1>
+  <p class="text-lg mt-4"> List unlimited houses and start making passive income from your properties </p>
+  <div class="relative flex items-center justify-center group">
+    <%= image_tag "house.jpg", class: "h-96 object-cover mt-8 rounded-lg group-hover:brightness-75" %>
+    <%= link_to "Get Started Now", owner_signup_path, class: "absolute bg-white rounded-lg border-2 p-2 border-gray-100 group-hover:shadow-lg group-hover:shadow-red-500 hover:border-red-600 hover:bg-red-600 hover:text-red-100 hover:shadow-transparent transition-all duration-250", data: { turbo_method: :post } %>
+  </div>
+</div>

@@ -56,6 +56,7 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+  gem "dotenv-rails"
 end
 
 group :test do
@@ -69,3 +70,7 @@ gem "friendly_id", "~> 5.5.0"
 gem "devise", "~> 4.9"
 
 gem "tailwind_devise", "~> 0.0.3"
+
+gem "stripe", "~> 15.3"
+
+gem "pry-rails", "~> 0.3.11"

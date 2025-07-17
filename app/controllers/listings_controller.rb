@@ -1,5 +1,6 @@
 class ListingsController < ApplicationController
   before_action :set_listing, only: %i[ show edit update destroy photos]
+  before_action :redirect_to_signup, only: [ "new", "create" ]
 
   # GET /listings or /listings.json
   def index
@@ -61,13 +62,17 @@ class ListingsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_listing
-      @listing = Listing.friendly.find(params.expect(:id))
-    end
 
-    # Only allow a list of trusted parameters through.
-    def listing_params
-      params.expect(listing: [ :title, :address, :description, :bedrooms, :bathrooms, :people_limit, images: []])
-    end
+  def redirect_to_signup
+    redirect_to owner_signup_path
+  end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_listing
+    @listing = Listing.friendly.find(params.expect(:id))
+  end
+
+  # Only allow a list of trusted parameters through.
+  def listing_params
+    params.expect(listing: [ :title, :address, :description, :bedrooms, :bathrooms, :people_limit, images: [] ])
+  end
 end
