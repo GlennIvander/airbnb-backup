@@ -1,0 +1,8 @@
+# smtp:
+#   user_name: my-smtp-user
+#   password: my-smtp-password
+#
+# aws:
+stripe:
+  pk: pk_test_51Rlp2LD1ZEEf4jJLpTL8mvr57yqDsKvPtLD4qNZlBL3Rh3dGmyGP8ILbNYXATcGz4QZJ65Q3bUGNiKqHoPtFfQb000SB82Qd8R
+  sk: sk_test_51Rlp2LD1ZEEf4jJLeRLK28V1ycHP960L3vfe1FCwB3dEfD7NmX4bUokMnLS6Y2Vvs6rcrAWOvD89pYxqXQ1pbbab009mXXiLzk
